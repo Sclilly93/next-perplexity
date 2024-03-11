@@ -16,18 +16,25 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
+
+.tile-animation {
+  background: linear-gradient(270deg, white, rgb(237, 242, 244), rgb(223, 242, 248));
+  background-size: 200% 200%;
+  animation: gradient-animation 10s linear infinite;
+}
+.tile-animation:hover {
+  animation: gradient-animation 1s linear infinite;
+}
+
+
